@@ -12,7 +12,7 @@ def print_menu():
 
 def run_crud(lst_rezervari):
 
-    def handle_adaugare(lst_rezervari, id_rezervare):
+    def handle_adaugare(lst_rezervari):
         try:
             id_rezervare = input('Dați id-ul: ')
             rezervare_existenta = get_by_id(lst_rezervari, id_rezervare)

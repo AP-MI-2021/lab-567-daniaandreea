@@ -15,7 +15,7 @@ def main():
     add_rezervare(lst_rezervari, '9', 'Serban', 'economy plus', 295, 'nu')
     add_rezervare(lst_rezervari, '10', 'Ion', 'economy', 210, 'da')
 
-    x = input('Dați 1 pt. comanda de tip meniu sau 2 pt. comanda de tip line: ')
+
     run_console(lst_rezervari)
 
- main()
+main()
