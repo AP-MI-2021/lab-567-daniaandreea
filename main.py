@@ -1,5 +1,5 @@
 from Logic.crud import add_rezervare
-from UserInterface.console import run_console
+from UserInterface.console import run_console, command_line_console
 
 
 def main():
@@ -16,6 +16,7 @@ def main():
     add_rezervare(lst_rezervari, '10', 'Ion', 'economy', 210, 'da')
 
 
-    run_console(lst_rezervari)
+    #run_console(lst_rezervari)
+    command_line_console(lst_rezervari)
 
 main()

@@ -9,6 +9,45 @@ def print_menu():
     print('2. Operațiuni')
     print('x. Ieșire')
 
+def command_line_console(lst_rezervari):
+    while True:
+        print('Pt. comanda de adăugare: adauga,<id_rezervare>,<nume>,<clasa>,<preț>,<checkin>')
+        print('Pt. comanda de ștergere: sterge,<id_rezervare>')
+        print('Pt. comanda de modificare: modifica,<id_rezervare>,<nume>,<clasa>,<pret>,<checkin>')
+        print('Pt. comanda de afișare listă: showall')
+        print('Dați comenzile separate prin „;” (datele din aceeași comandă se separă prin virgulă): ')
+        comenzi = input()
+        new_comenzi = comenzi.split(';')
+        for comanda in new_comenzi:
+            new_comanda = comanda.split(',')
+
+            if new_comanda[0] == 'adauga':
+                id_rezervare = new_comanda[1]
+                nume = new_comanda[2]
+                clasa = new_comanda[3]
+                pret = new_comanda[4]
+                checkin = new_comanda[5]
+                add_rezervare(lst_rezervari, id_rezervare, nume, clasa, pret, checkin)
+
+            elif new_comanda[0] == 'sterge':
+                id_rezervare = new_comanda[1]
+                lst_rezervari = delete_rezervare(lst_rezervari, id_rezervare)
+
+            elif new_comanda[0] == 'modifica':
+                id_rezervare = new_comanda[1]
+                nume = new_comanda[2]
+                clasa = new_comanda[3]
+                pret = new_comanda[4]
+                checkin = new_comanda[5]
+                lst_rezervari = update_rezervare(lst_rezervari, id_rezervare, nume, clasa, pret, checkin)
+
+            elif new_comanda[0] == 'showall':
+                for rezervare in lst_rezervari:
+                    print(get_str(rezervare))
+
+            else:
+                print('Comandă invalidă, reîncearcă!')
+
 
 def run_crud(lst_rezervari):
 
